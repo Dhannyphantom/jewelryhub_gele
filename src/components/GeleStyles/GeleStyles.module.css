@@ -1,0 +1,18 @@
+.geleStyles {
+  width: 100%; /* ✅ Prevents shifting */
+  min-width: 180px; /* ✅ Ensures consistent width */
+  box-sizing: border-box; /* ✅ Prevents border from affecting width */
+}
+.text {
+  color: black;
+}
+.geleStylesWrapper {
+  margin-bottom: 5px;
+}
+.selectedText {
+  color: rgb(255, 193, 7, 1);
+}
+.selected {
+  border-color: #ffc107;
+  background-color: #fff3cd;
+}
