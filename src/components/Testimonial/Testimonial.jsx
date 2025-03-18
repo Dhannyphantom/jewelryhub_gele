@@ -39,8 +39,8 @@ const Testimonial = () => {
             <Image
               src={testimonial.image}
               alt={testimonial.name}
-              width={80}
-              height={80}
+              width={120}
+              height={120}
               className={styles.avatar}
             />
             <p className={styles.review}>"{testimonial.review}"</p>
