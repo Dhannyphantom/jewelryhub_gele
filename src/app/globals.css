@@ -3,7 +3,9 @@
 :root {
   --color-gold: #d4af37;
   --color-gold-600: #c3a234;
-  --color-gold-light: #ffd700;
+  --color-gold-light: #f7f0da;
+  --color-gold-light-500: #f2e6c1;
+  --color-gold-light-600: #f2e6c1;
   --color-bg-dark: #1f1f1f;
   --color-bg-light: #fdf6e3;
   --color-text-dark: #555;
@@ -12,10 +14,11 @@
 @theme {
   --color-primary-500: var(--color-gold);
   --color-primary-600: var(--color-gold-600);
+  --color-light: var(--color-gold-light);
+  --color-light-500: var(--color-gold-light-500);
+  --color-light-600: var(--color-gold-light-600);
   --color-accent-500: var(--color-text-dark);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
