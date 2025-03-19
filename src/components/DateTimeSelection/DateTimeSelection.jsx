@@ -12,6 +12,7 @@ import "react-calendar/dist/Calendar.css";
 const DateTimeSelection = ({ onNext }) => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
+  const [address, setAddress] = useState("");
 
   return (
     <div className="space-y-6">
@@ -27,9 +28,7 @@ const DateTimeSelection = ({ onNext }) => {
       )}
       <div className="flex flex-col space-y-4 md:flex-row md:space-x-4">
         <div>
-          <label className="block text-gray-700 font-semibold mb-2">
-            Select Date
-          </label>
+          <label className="block text-gray-700 font-semibold mb-2">Date</label>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -42,7 +41,7 @@ const DateTimeSelection = ({ onNext }) => {
             />
           </motion.div>
         </div>
-        <div className="w-md">
+        <div className="w-2xs">
           <label className="block text-gray-700 font-semibold mb-2">Time</label>
           <TimePicker
             use12Hours
@@ -52,6 +51,19 @@ const DateTimeSelection = ({ onNext }) => {
             className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
           />
         </div>
+      </div>
+
+      <div className="w-lg">
+        <label className="block text-gray-700 font-semibold mb-2">
+          Event Address
+        </label>
+        <input
+          type="text"
+          className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+          placeholder="Enter event address"
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+        />
       </div>
     </div>
   );
