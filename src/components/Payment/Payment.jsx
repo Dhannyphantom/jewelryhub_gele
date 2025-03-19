@@ -20,6 +20,9 @@ const Payment = ({ onPaymentSuccess }) => {
       <div className="text-lg font-semibold text-gray-900">
         Booking Fee: <span className="text-primary-500">₦2000</span>
       </div>
+      <p className="text-gray-600 italic">
+        Secure your spot now and let us make your gele experience unforgettable!
+      </p>
       <button
         className="px-6 py-2 bg-primary-500 text-white font-semibold rounded-lg disabled:opacity-50"
         onClick={handlePayment}
