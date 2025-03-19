@@ -6,9 +6,9 @@
   --color-gold-light: #f7f0da;
   --color-gold-light-500: #f2e6c1;
   --color-gold-light-600: #f2e6c1;
-  --color-bg-dark: #1f1f1f;
-  --color-bg-light: #fdf6e3;
-  --color-text-dark: #555;
+  /* --color-bg-dark: #1f1f1f; */
+  /* --color-bg-light: #fdf6e3; */
+  /* --color-text-dark: #555; */
 }
 
 @theme {
@@ -29,7 +29,5 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #434343;
 }

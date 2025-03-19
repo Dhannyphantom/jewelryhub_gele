@@ -23,9 +23,19 @@ export const images = {
   collage6,
 };
 
+export const userImages = [userImg1, userImg2, userImg3, userImg4, userImg5];
+
 export const ownerImage = ownerImg;
 
 export const imagesArr = Object.values(images);
+
+export const makeupArtists = [
+  { id: 1, name: "David Okafor", image: userImages[0] },
+  { id: 2, name: "Fatima Yusuf", image: userImages[1] },
+  { id: 3, name: "Elegant", image: userImages[2] },
+  { id: 4, name: "Fashionista", image: userImages[3] },
+  { id: 5, name: "Jim Bentley", image: userImages[4] },
+];
 
 export const testimonials = [
   {

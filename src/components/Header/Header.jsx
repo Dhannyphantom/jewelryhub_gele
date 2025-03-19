@@ -41,7 +41,7 @@ function Header() {
                     href={href}
                     className={`block px-4 py-2 rounded-md ${
                       pathname === href
-                        ? "text-primary-500 font-semibold border-b-4 border-accent-500"
+                        ? "text-primary-500 font-semibold border-b-4 border-light-500"
                         : "text-gray-700"
                     } hover:text-primary-500`}
                   >
