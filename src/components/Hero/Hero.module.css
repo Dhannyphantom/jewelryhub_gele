@@ -47,10 +47,8 @@
 
 /* Image */
 .heroImage .image {
-  border-radius: 15px;
+  border-radius: 18px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
 }
 
 .heroImage {
