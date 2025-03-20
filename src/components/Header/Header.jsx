@@ -1,7 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Button from "../Button/Button";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,6 +11,7 @@ function Header() {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const pathname = usePathname();
+  const isAuth = pathname.startsWith("/auth");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,36 +54,47 @@ function Header() {
             isOpen ? "block" : "hidden md:flex"
           }`}
         >
-          {["Home", "Book", "Services", "About", "Contact Us"].map(
-            (text, index) => {
-              const href =
-                text === "Home"
-                  ? "/"
-                  : `/${text.toLowerCase().replace(" ", "-")}`;
-              return (
-                <li key={index}>
-                  <Link
-                    href={href}
-                    className={`block px-4 py-2 rounded-md ${
-                      pathname === href
-                        ? "text-primary-500 font-semibold border-b-4 border-light-500"
-                        : "text-gray-700"
-                    } hover:text-primary-500`}
-                  >
-                    {text}
-                  </Link>
-                </li>
-              );
-            }
-          )}
+          {isAuth
+            ? []
+            : ["Home", "Book", "Services", "About", "Contact Us"].map(
+                (text, index) => {
+                  const href =
+                    text === "Home"
+                      ? "/"
+                      : `/${text.toLowerCase().replace(" ", "-")}`;
+                  return (
+                    <li key={index}>
+                      <Link
+                        href={href}
+                        className={`block px-4 py-2 rounded-md ${
+                          pathname === href
+                            ? "text-primary-500 font-semibold border-b-4 border-light-500"
+                            : "text-gray-700"
+                        } hover:text-primary-500`}
+                      >
+                        {text}
+                      </Link>
+                    </li>
+                  );
+                }
+              )}
         </ul>
 
         {/* Right Side Button */}
-        <div className="hidden md:block">
-          <button className="bg-primary-500 text-white px-4 py-2 rounded-md hover:bg-primary-600 transition cursor-pointer">
-            Logout
-          </button>
-        </div>
+        {isAuth ? (
+          <motion.h1
+            className="text-xl font-bold bg-gradient-to-r from-primary-500 via-light-500 to-primary-600 bg-[length:200%_100%] bg-clip-text text-transparent"
+            initial={{ backgroundPosition: "200% 0%" }}
+            animate={{ backgroundPosition: "0% 0%" }}
+            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+          >
+            Join us & sparkle in style!
+          </motion.h1>
+        ) : (
+          <div className="hidden md:block">
+            <Button title={"Sign In"} href={"/auth"} />
+          </div>
+        )}
       </div>
     </nav>
   );
