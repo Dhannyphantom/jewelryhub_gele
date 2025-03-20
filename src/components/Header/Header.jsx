@@ -12,6 +12,7 @@ function Header() {
 
   const pathname = usePathname();
   const isAuth = pathname.startsWith("/auth");
+  // hello
 
   useEffect(() => {
     const handleScroll = () => {
